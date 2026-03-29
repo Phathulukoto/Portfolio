@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Phathutshedzo Lukoto | IT Professional Portfolio</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary-color: #7c3aed;
+      --accent-color: #ec4899;
+      --dark-color: #0f172a;
+      --dark-light: #1e293b;
+      --light-color: #f8fafc;
+      --text-color: #334155;
+      --text-light: #64748b;
+      --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+      --transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      --border-radius: 12px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.7;
+      color: var(--text-color);
+      background: var(--light-color);
+      overflow-x: hidden;
+    }
+
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 100px 0; }
+
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      color: var(--dark-color);
+    }
+    h1 { font-size: 3.2rem; }
+    h2 {
+      font-size: 2.4rem;
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--gradient);
+      border-radius: 2px;
+    }
+    p { margin-bottom: 18px; font-size: 1.08rem; }
+
+    a { text-decoration: none; color: var(--primary-color); transition: var(--transition); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 30px;
+      background: var(--gradient);
+      color: #fff;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 600;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .btn-outline { background: transparent; border: 2px solid var(--primary-color); color: var(--primary-color); }
+    .btn-outline:hover { background: var(--primary-color); color: #fff; }
+
+    /* Header */
+    header {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo h1 {
+      font-size: 1.7rem;
+      margin: 0;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .logo-icon { font-size: 1.7rem; color: var(--primary-color); }
+
+    .nav-links { display: flex; list-style: none; gap: 28px; }
+    .nav-links a {
+      color: var(--dark-color);
+      font-weight: 500;
+      position: relative;
+      padding: 5px 0;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--gradient);
+      transition: var(--transition);
+    }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary-color); }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--dark-color);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, rgba(37,99,235,0.05) 0%, rgba(124,58,237,0.05) 100%);
+      padding: 170px 0 110px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: var(--gradient);
+      opacity: 0.06;
+      z-index: 0;
+    }
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .tagline { font-size: 1.4rem; color: var(--primary-color); margin-bottom: 24px; font-weight: 500; }
+    .hero-text p { color: var(--text-light); font-size: 1.15rem; margin-bottom: 34px; }
+    .hero-btns { display: flex; gap: 18px; flex-wrap: wrap; }
+
+    .profile-card {
+      background: #fff;
+      border-radius: var(--border-radius);
+      padding: 28px;
+      box-shadow: var(--shadow-lg);
+      transform: perspective(1000px) rotateY(-5deg);
+      transition: var(--transition);
+      text-align: center;
+    }
+    .profile-card:hover { transform: perspective(1000px) rotateY(0deg); }
+    .profile-img { width: 100%; max-width: 360px; border-radius: var(--border-radius); box-shadow: var(--shadow); }
+
+    .floating-elements { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+    .floating-element {
+      position: absolute;
+      background: #fff;
+      border-radius: 10px;
+      padding: 14px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      animation: float 6s ease-in-out infinite;
+    }
+    .floating-element:nth-child(1) { top: 10%; left: -10%; animation-delay: 0s; }
+    .floating-element:nth-child(2) { top: 60%; right: -5%; animation-delay: 2s; }
+    .floating-element:nth-child(3) { bottom: 10%; left: 20%; animation-delay: 4s; }
+    @keyframes float { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-18px); } }
+
+    /* About */
+    .about { background: #fff; }
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-light);
+      max-width: 740px;
+      margin: 0 auto 60px;
+      font-size: 1.15rem;
+    }
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .about-text h2 { text-align: left; margin-bottom: 25px; }
+    .about-text h2::after { left: 0; transform: none; }
+
+    .education-timeline { position: relative; margin-top: 35px; }
+    .education-timeline::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 20px;
+      height: 100%;
+      width: 2px;
+      background: var(--gradient);
+    }
+    .education-item { position: relative; padding-left: 60px; margin-bottom: 38px; }
+    .education-item::before {
+      content: '';
+      position: absolute;
+      top: 5px; left: 12px;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--primary-color);
+      border: 4px solid #fff;
+      box-shadow: 0 0 0 2px var(--primary-color);
+    }
+    .education-item .date {
+      color: var(--text-light);
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: inline-block;
+      background: rgba(37,99,235,0.1);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    .skills h2 { text-align: left; }
+    .skills h2::after { left: 0; transform: none; }
+    .skills-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; margin-top: 10px; }
+    .skill-header { display: flex; justify-content: space-between; margin-bottom: 10px; }
+    .skill-name { font-weight: 600; }
+    .skill-percentage { color: var(--primary-color); font-weight: 700; }
+    .skill-bar { height: 10px; background: #e2e8f0; border-radius: 5px; overflow: hidden; }
+    .skill-level { height: 100%; width: 0; background: var(--gradient); border-radius: 5px; transition: width 1.5s ease-in-out; }
+
+    /* Portfolio */
+    .portfolio { background: linear-gradient(135deg, rgba(37,99,235,0.03), rgba(124,58,237,0.03)); }
+    .portfolio-filters { display: flex; justify-content: center; gap: 14px; margin-bottom: 45px; flex-wrap: wrap; }
+    .filter-btn {
+      padding: 10px 20px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 600;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--primary-color);
+      color: #fff;
+      border-color: var(--primary-color);
+    }
+
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 28px; }
+    .portfolio-item {
+      background: #fff;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    .portfolio-item:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
+    .portfolio-img { width: 100%; height: 220px; object-fit: cover; transition: var(--transition); }
+    .portfolio-item:hover .portfolio-img { transform: scale(1.05); }
+    .portfolio-content { padding: 24px; }
+    .portfolio-content p { color: var(--text-light); font-size: 1rem; }
+
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+    .tech-tag {
+      background: rgba(37,99,235,0.1);
+      color: var(--primary-color);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .portfolio-links { display: flex; gap: 16px; }
+    .portfolio-link { display: inline-flex; align-items: center; gap: 7px; font-weight: 600; font-size: 0.95rem; }
+
+    /* Resume */
+    .resume { background: #fff; }
+    .resume-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+    .resume-section h3 {
+      color: var(--primary-color);
+      margin-bottom: 26px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid #e2e8f0;
+      position: relative;
+    }
+    .resume-section h3::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: var(--gradient);
+    }
+    .experience-item, .achievement-item { margin-bottom: 34px; position: relative; padding-left: 28px; }
+    .experience-item::before, .achievement-item::before {
+      content: '';
+      position: absolute;
+      top: 8px; left: 0;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--primary-color);
+    }
+    .date {
+      background: rgba(37,99,235,0.1);
+      padding: 3px 10px;
+      border-radius: 15px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-light);
+      display: inline-block;
+      margin: 8px 0 10px;
+    }
+
+    /* Contact */
+    .contact { background: linear-gradient(135deg, rgba(37,99,235,0.05), rgba(124,58,237,0.05)); }
+    .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+    .contact-detail { display: flex; align-items: center; gap: 15px; margin-bottom: 18px; }
+    .contact-icon {
+      width: 50px; height: 50px;
+      background: var(--gradient);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 1.2rem;
+    }
+    .social-links { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 16px; }
+    .social-link {
+      width: 50px; height: 50px;
+      background: #fff; color: var(--primary-color);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      font-size: 1.2rem;
+    }
+    .social-link:hover { background: var(--primary-color); color: #fff; transform: translateY(-4px); }
+
+    .contact-form {
+      background: #fff;
+      padding: 36px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-lg);
+    }
+    .form-group { margin-bottom: 22px; }
+    label { display: block; margin-bottom: 8px; font-weight: 600; }
+    .form-control {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--border-radius);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+    }
+    textarea.form-control { height: 150px; resize: vertical; }
+
+    .form-status {
+      margin-top: 14px;
+      font-weight: 600;
+      color: var(--text-light);
+      min-height: 22px;
+    }
+
+    /* Footer */
+    footer { background: var(--dark-color); color: #fff; padding: 60px 0 30px; }
+    .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 38px; }
+    .footer-logo p, .footer-contact p, .footer-links a { color: #94a3b8; }
+    .footer-links ul { list-style: none; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a:hover { color: #fff; }
+    .footer-bottom { text-align: center; padding-top: 28px; border-top: 1px solid #334155; color: #94a3b8; font-size: 0.9rem; }
+
+    /* Scroll to Top */
+    .scroll-top {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      width: 50px; height: 50px;
+      background: var(--gradient);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 999;
+    }
+    .scroll-top.active { opacity: 1; visibility: visible; }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-content, .about-content, .resume-content, .contact-container { grid-template-columns: 1fr; }
+      .hero-btns { justify-content: center; }
+      .about-text h2, .skills h2 { text-align: center; }
+      .about-text h2::after, .skills h2::after { left: 50%; transform: translateX(-50%); }
+      .footer-content { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: 2.4rem; }
+      h2 { font-size: 2rem; }
+      .nav-links {
+        position: fixed;
+        top: 78px;
+        right: -100%;
+        flex-direction: column;
+        background: #fff;
+        width: 80%;
+        height: calc(100vh - 78px);
+        transition: var(--transition);
+        box-shadow: var(--shadow-lg);
+        padding: 40px;
+        gap: 20px;
+      }
+      .nav-links.active { right: 0; }
+      .hamburger { display: block; }
+      .skills-container { grid-template-columns: 1fr; }
+      .footer-content { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <i class="fas fa-code logo-icon"></i>
+        <h1>Phathutshedzo Lukoto</h1>
+      </div>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <button class="hamburger" aria-label="Open menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Transforming Ideas into <span style="background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent;">Digital Solutions</span></h1>
+          <div class="tagline">Aspiring IT Professional & Software Developer</div>
+          <p>
+            I am a passionate IT graduate from Rosebank College with a strong interest in developing innovative web applications and software solutions.
+            I enjoy transforming complex problems into clean, efficient, and user-friendly digital experiences.
+            I am committed to continuous learning and building solutions that add real value to users and businesses.
+          </p>
+          <div class="hero-btns">
+            <a href="#portfolio" class="btn"><i class="fas fa-rocket"></i> View My Work</a>
+            <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+          </div>
+        </div>
+
+        <div class="hero-image" style="position: relative;">
+          <div class="profile-card">
+            <!-- Replace image path with your real photo -->
+            <img src="logo/WhatsApp Image 2025-01-16 at 10.10.16_4170161e.jpg" alt="Phathutshedzo Lukoto" class="profile-img">
+          </div>
+
+          <div class="floating-elements">
+            <div class="floating-element"><i class="fas fa-code" style="color: var(--primary-color);"></i> Full Stack Dev</div>
+            <div class="floating-element"><i class="fas fa-mobile-alt" style="color: var(--secondary-color);"></i> Responsive Design</div>
+            <div class="floating-element"><i class="fas fa-database" style="color: var(--accent-color);"></i> Database Management</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">Learn more about my background, skills, and educational journey in information technology.</p>
+
+      <div class="about-content">
+        <div class="about-text">
+          <h2>My Journey in IT</h2>
+          <p>My interest in technology began when I fixed my first home computer. That experience sparked a deep curiosity about how computers work and how software powers everyday tasks. Over time, this curiosity developed into a strong passion for Information Technology.</p>
+          <p>At Rosebank College, I began my journey into web development, where I learned how to design and build functional, user-friendly websites. Through my academic experience, I have gained solid knowledge in software development, database systems, and network security. I am particularly fascinated by the balance between design and functionality, and how both come together to create seamless, user-centered applications.</p>
+          <p>Beyond academics, I continuously explore emerging technologies, build personal projects, and expand my technical skills. I enjoy collaborating with other developers, learning from the community, and sharing knowledge to grow together in the tech space.</p>
+
+          <div class="education-timeline">
+            <div class="education-item">
+              <div class="date">2023 - 2025</div>
+              <h3>Bachelor of Information Technology in Business Systems</h3>
+              <p>Rosebank College</p>
+              <p>Relevant coursework: Advanced Web Development, Database Systems, Network Security, Software Engineering, Mobile Application Development, Cloud Computing.</p>
+            </div>
+
+            <div class="education-item">
+              <div class="date">2022</div>
+              <h3>Higher Certificate in Information Technology Support Services</h3>
+              <p>Rosebank College</p>
+              <p>Covered IT support fundamentals, troubleshooting, networking basics, and cybersecurity introduction.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills">
+          <h2>Technical Skills</h2>
+
+          <div class="skills-container">
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">HTML/CSS</span>
+                <span class="skill-percentage">95%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-level" data-level="95"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">JavaScript</span>
+                <span class="skill-percentage">80%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-level" data-level="90"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">React</span>
+                <span class="skill-percentage">75%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-level" data-level="85"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">Node.js</span>
+                <span class="skill-percentage">65%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-level" data-level="80"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">Java</span>
+                <span class="skill-percentage">75%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-level" data-level="85"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">SQL & Databases</span>
+                <span class="skill-percentage">85%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-level" data-level="90"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <h2 class="section-title">My Portfolio</h2>
+      <p class="section-subtitle">A collection of my recent projects that demonstrate my skills and passion for development.</p>
+
+      <div class="portfolio-filters">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="web">Web Development</button>
+        <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+        <button class="filter-btn" data-filter="database">Database</button>
+      </div>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-item" data-category="web">
+          <img src="logo/Screenshot 2025-11-11 181718.png" alt="E-Commerce Platform" class="portfolio-img">
+          <div class="portfolio-content">
+            <h3>E-Commerce Platform</h3>
+            <p>A full-featured online store with authentication, product management, shopping cart, and payments.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">MongoDB</span>
+            </div>
+            <div class="portfolio-links">
+              <a href="https://github.com/Phathulukoto/Salon.git" class="portfolio-link"><i class="fab fa-github"></i> Code</a>
+              <a href="https://phathulukoto.github.io/Salon/" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="mobile">
+          <img src="logo/Screenshot 2025-11-11 170420.png" alt="Task Management App" class="portfolio-img">
+          <div class="portfolio-content">
+            <h3>TaskFlow App</h3>
+            <p>A productivity app concept for managing tasks and deadlines with a clean UI.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+            <div class="portfolio-links">
+              <a href="https://github.com/Phathulukoto" class="portfolio-link"><i class="fab fa-github"></i> Code</a>
+              <a href="https://phathulukoto.github.io/Test-Manager/" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume -->
+  <section id="resume" class="resume">
+    <div class="container">
+      <h2 class="section-title">My Resume</h2>
+      <p class="section-subtitle">A summary of my education, skills, and achievements.</p>
+
+      <div class="resume-content">
+        <div class="resume-section">
+          <h3>Work Experience</h3>
+          <div class="experience-item">
+            <h4>IT Graduate / Junior Developer (Open to Opportunities)</h4>
+            <span class="date">2026</span>
+            <p>Open to internships, graduate programs, and junior roles where I can contribute and grow my skills.</p>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <h3>Achievements & Certifications</h3>
+
+          <div class="achievement-item">
+            <h4>Bachelor of Information Technology in Business Systems</h4>
+            <span class="date">2023 – 2025</span>
+            <p>Built strong skills in software development, database systems, and web applications through practical projects.</p>
+          </div>
+
+          <div class="achievement-item">
+            <h4>Higher Certificate in Information Technology Support Services</h4>
+            <span class="date">2022</span>
+            <p>Gained foundational knowledge in IT support, troubleshooting, and networking basics.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top: 55px;">
+  
+  <!-- CV Download -->
+  <a href="logo/Phathutshedzo Lukoto CV .pdf" class="btn">
+    <i class="fas fa-download"></i> Download CV (PDF)
+  </a>
+
+  <br><br>
+
+  <!-- Cover Letter Download -->
+  <a href="logo/Cover_Letter_Phathutshedzo_Lukoto.pdf" class="btn">
+    <i class="fas fa-download"></i> Download Cover Letter (PDF)
+  </a>
+
+</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">Have a project in mind or want to discuss opportunities? I’d love to hear from you.</p>
+
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Let's Connect</h3>
+          <p>I’m open to discussing new projects, creative ideas, and IT opportunities.</p>
+
+          <div class="contact-details">
+            <div class="contact-detail">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <h4>Email</h4>
+                <p>phathulukoto18@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <h4>Phone</h4>
+                <p>066 216 8740</p>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <h4>Location</h4>
+                <p>Polokwane, Limpopo</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/phathutshedzo-lukoto-8aa590173/" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/Phathulukoto" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://wa.me/27662168740" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/p_lukoto" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+       <div class="contact-form">
+  <form 
+    id="contactForm"
+    method="POST"
+    action="https://script.google.com/macros/s/AKfycbz3ylqjQhwIYFqOTEK5sw57-0Ye69Av_hvZUGQre-nHHockB8g7ppRl74Y7XpDmYC__/exec"
+  >
+
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input 
+        type="text" 
+        id="name" 
+        name="name" 
+        class="form-control" 
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        class="form-control" 
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <input 
+        type="text" 
+        id="subject" 
+        name="subject" 
+        class="form-control" 
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="message">Your Message</label>
+      <textarea 
+        id="message" 
+        name="message" 
+        class="form-control" 
+        required
+      ></textarea>
+    </div>
+
+    <button type="submit" class="btn" style="width: 100%;">
+      <i class="fas fa-paper-plane"></i> Send Message
+    </button>
+
+    <div class="form-status" id="formStatus"></div>
+
+  </form>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2 style="color:#fff;">Phathutshedzo Lukoto</h2>
+          <p>A passionate IT student and software developer dedicated to creating innovative digital solutions.</p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Contact Info</h3>
+          <p><i class="fas fa-envelope"></i> phathulukoto18@gmail.com</p>
+          <p><i class="fas fa-phone"></i> 066 216 8740</p>
+          <p><i class="fas fa-map-marker-alt"></i> Polokwane, Limpopo</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; Phathutshedzo Lukoto. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <div class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </div>
+
+  <script>
+/* ===============================
+   CONFIG
+   =============================== */
+const SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbz3ylqjQhwIYFqOTEK5sw57-0Ye69Av_hvZUGQre-nHHockB8g7ppRl74Y7XpDmYC__/exec"; // <-- paste your Apps Script /exec URL here
+
+/* ===============================
+   1) Mobile Navigation Toggle
+   =============================== */
+(() => {
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+  if (!hamburger || !navLinks) return;
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    hamburger.innerHTML = navLinks.classList.contains("active")
+      ? '<i class="fas fa-times"></i>'
+      : '<i class="fas fa-bars"></i>';
+  });
+
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+  });
+})();
+
+/* ===============================
+   2) Active Nav Link + Scroll Top
+   =============================== */
+(() => {
+  const scrollTopBtn = document.querySelector(".scroll-top");
+  const navAnchors = document.querySelectorAll(".nav-links a");
+  const sections = document.querySelectorAll("section");
+
+  const onScroll = () => {
+    // Active link
+    let currentId = "";
+    sections.forEach((section) => {
+      const top = section.offsetTop;
+      if (window.scrollY >= top - 130) currentId = section.id;
+    });
+
+    navAnchors.forEach((a) => {
+      a.classList.remove("active");
+      if (a.getAttribute("href") === "#" + currentId) a.classList.add("active");
+    });
+
+    // Scroll top button
+    if (scrollTopBtn) {
+      if (window.scrollY > 300) scrollTopBtn.classList.add("active");
+      else scrollTopBtn.classList.remove("active");
+    }
+  };
+
+  window.addEventListener("scroll", onScroll);
+  onScroll();
+
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+})();
+
+/* ===============================
+   3) Portfolio Filtering
+   =============================== */
+(() => {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const portfolioItems = document.querySelectorAll(".portfolio-item");
+  if (!filterButtons.length || !portfolioItems.length) return;
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      filterButtons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const filter = btn.getAttribute("data-filter");
+
+      portfolioItems.forEach((item) => {
+        const categories = (item.getAttribute("data-category") || "").split(",");
+        const show = filter === "all" || categories.includes(filter);
+        item.style.display = show ? "block" : "none";
+      });
+    });
+  });
+})();
+
+/* ===============================
+   4) Skill Bars Animation
+   - Works with: <div class="skill-level" data-level="90"></div>
+   =============================== */
+(() => {
+  const bars = document.querySelectorAll(".skill-level");
+  if (!bars.length) return;
+
+  const inView = (el) => {
+    const rect = el.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    return rect.top < vh - 60;
+  };
+
+  const animate = () => {
+    bars.forEach((bar) => {
+      const level = bar.getAttribute("data-level") || "0";
+      if (inView(bar) && !bar.classList.contains("animated")) {
+        bar.style.width = level + "%";
+        bar.classList.add("animated");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", animate);
+  animate();
+})();
+
+/* ===============================
+   5) Contact Form -> Google Sheets
+   SIMPLE + RELIABLE METHOD (FormData)
+   REQUIREMENTS in your HTML:
+   - <form id="contactForm">
+   - Inputs must have name="" values:
+     name="name" name="email" name="subject" name="message"
+   - Optional: <div id="formStatus"></div>
+   =============================== */
+(() => {
+  const form = document.getElementById("contactForm");
+  if (!form) return;
+
+  const statusEl = document.getElementById("formStatus");
+
+  // Helper: show status
+  const setStatus = (msg) => {
+    if (statusEl) statusEl.textContent = msg;
+  };
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Validate name attributes exist
+    const requiredNames = ["name", "email", "subject", "message"];
+    for (const n of requiredNames) {
+      if (!form.querySelector(`[name="${n}"]`)) {
+        setStatus(`❌ Missing name="${n}" on your form field.`);
+        return;
+      }
+    }
+
+    if (!SCRIPT_URL || !SCRIPT_URL.includes("/exec")) {
+      setStatus("❌ Add your Google Apps Script /exec URL in SCRIPT_URL.");
+      return;
+    }
+
+    setStatus("Sending...");
+
+    try {
+      const formData = new FormData(form);
+
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        body: formData,
+      });
+
+      setStatus("✅ Message sent!");
+      form.reset();
+    } catch (err) {
+      setStatus("❌ Failed to send. Please try again.");
+    }
+  });
+})();
+</script>
+</body>
+</html>
